@@ -23,4 +23,7 @@
 - react-dom是提供与DOM相关的功能
 - browser.js的作用是把JSX语法转为javascript语法
 
-`babel main.js dist`
+
+# ReactDOM.render()
+render函数是React最基础的api，用于把模板转为html语言，并插入指定的DOM节点
+
