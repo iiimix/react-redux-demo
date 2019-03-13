@@ -33,3 +33,4 @@ babel src -d build
 ```
 "build": "babel src -d public",
 ```
+
