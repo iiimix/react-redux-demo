@@ -7,10 +7,7 @@ import App from './components/app';
 
 import 'antd/dist/antd.css'
 
-
 import { createStore } from 'redux'
-
-import { Provider, connect} from 'react-redux'
 
 
 // redux原始state
