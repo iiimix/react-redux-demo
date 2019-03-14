@@ -101,4 +101,4 @@ npm i webpack-dev-server -D
 "dev": "webpack-dev-server"
 ```
 
-## 模块热替换 moduleHotReplace
+## 模块热替换 HotModuleReplacement
