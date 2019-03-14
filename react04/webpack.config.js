@@ -1,10 +1,23 @@
 
+var path = require('path')
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: {
         app: './src/index.js'
+    },
+    output: {
+        publicPath: '/',
+        path: path.resolve(__dirname, 'dist'),
+        filename: '[name].[hash:6].bundle.js',
+        chunkFilename: '[name]-[hash:6].chunk.js'
+    },
+    devServer: {
+        contentBase: path.join(__dirname, 'dist'),
+        port: 9000,
+        hot: true,
+
     },
     devtool: 'eval-source-map',
     module: {
