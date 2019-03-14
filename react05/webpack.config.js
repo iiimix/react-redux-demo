@@ -1,34 +1,37 @@
 
+
 var path = require('path')
 
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const webpack = require('webpack')
 
 module.exports = {
     entry: {
-        app: './src/index.js'
+        app: path.resolve(__dirname, 'src/index.js')
     },
     output: {
         publicPath: '/',
-        path: path.resolve(__dirname, 'dist'),
+        path: path.join(__dirname, 'dist'),
         filename: '[name].[hash:6].bundle.js',
-        chunkFilename: '[name]-[hash:6].chunk.js'
     },
+    devtool: 'eval-source-map',
     devServer: {
         contentBase: path.join(__dirname, 'dist'),
         port: 9000,
-        hot: true,
-
+        hot: true
     },
-    devtool: 'eval-source-map',
     module: {
         rules: [
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
                 use: {
-                    loader: "babel-loader"
+                    loader: 'babel-loader'
                 }
+            },
+            {
+                test: /\.css$/,
+                    loader: 'style-loader!css-loader'
             }
         ]
     },
@@ -39,4 +42,5 @@ module.exports = {
         }),
         new webpack.HotModuleReplacementPlugin()
     ]
+
 }

@@ -102,3 +102,7 @@ npm i webpack-dev-server -D
 ```
 
 ## 模块热替换 HotModuleReplacement
+
+```
+npm i hot-module-replacement
+```
