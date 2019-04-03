@@ -4,6 +4,7 @@ import { setVisibleFilter } from '../action/index'
 import Link from '../component/Link'
 
 
+
 const mapStateToProps = (state, ownProps) => ({
     active: ownProps.filter === state.visibleFilter
 })

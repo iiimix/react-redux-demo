@@ -20,3 +20,5 @@ Redux 默认并不包含 React 绑定库，需要单独安装。
 ```
 npm i redux react-redux -S
 ```
+
+## 1. 

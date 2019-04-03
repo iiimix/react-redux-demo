@@ -5,29 +5,32 @@ import PropTypes from 'prop-types'
 import Todo from './Todo'
 
 
-const TodoList = ({ todos, toggleTodo }) => {
-    return (
-        <ul>
-            {
-                todos.map(todo => (
-                    <Todo key={todo.id} {...todo} onClick={()=> toggleTodo(todo.id)}/>
-                ))
-            }
-        </ul>
-    )
+class TodoList extends React.Component {
+    render() {
+        const { todos, toggleTodo } = this.props;
+        return (
+            <ul>
+                {
+                    todos.map(todo => (
+                        <Todo key={todo.id} {...todo} onClick={()=> toggleTodo(todo.id)}/>
+                    ))
+                }
+            </ul>
+        )
+    }
 }
 
 // PropTypes属性类型定义，预检查
-// TodoList.PropTypes = {
-//     todos: PropTypes.arrayOf(
-//         PropTypes.shape({
-//             id: PropTypes.number.isRequired,
-//             completed: PropTypes.bool.isRequired,
-//             text: PropTypes.string.isRequired
-//         }).isRequired
-//     ).isRequired,
-//     toggleTodo: PropTypes.func.isRequired
-// }
+TodoList.propTypes = {
+    todos: PropTypes.arrayOf(
+        PropTypes.shape({
+            id: PropTypes.number.isRequired,
+            completed: PropTypes.bool.isRequired,
+            text: PropTypes.string.isRequired
+        }).isRequired
+    ).isRequired,
+    toggleTodo: PropTypes.func.isRequired
+}
 
 
 export default TodoList
