@@ -22,3 +22,32 @@ npm i redux react-redux -S
 ```
 
 ## 1. 
+
+
+
+
+## 常见错误一
+
+属性类型声明propTypes容易写成`PropTypes`，和上文引入的`PropTypes from 'prop-types'`混淆
+```javascript
+Link.propTypes = {
+...
+}
+```
+
+## 常见错误二
+reducers/todos.js中，map函数的参数应该是一个函数，这里用箭头函数简写，当箭头函数使用了大括号作为函数体标记，则函数体需要显示`return`关键字
+
+```javascript
+return state.map(todo => {
+    return todo.id === action.id? {
+        ...todo, completed: !todo.completed
+    } : todo
+})
+```
+或者，箭头函数不用大括号标记，则函数体只能有一个语句，并且返回语句值。
+```javascript
+return state.map(todo => todo.id === action.id? {
+        ...todo, completed: !todo.completed
+    } : todo)
+```
