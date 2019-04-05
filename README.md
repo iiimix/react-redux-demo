@@ -5,4 +5,5 @@
 1. [react中使用babel](https://github.com/iiimix/react-redux-demo/tree/master/react02)
 1. [react中使用webpack](https://github.com/iiimix/react-redux-demo/tree/master/react03)
 1. [webpack中插件使用](https://github.com/iiimix/react-redux-demo/tree/master/react04)
-
+1. [react中使用antd](https://github.com/iiimix/react-redux-demo/tree/master/react05)
+1. [react-redux使用](https://github.com/iiimix/react-redux-demo/tree/master/redux01)
