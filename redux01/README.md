@@ -12,16 +12,37 @@
     reducer是纯函数，接受oldState和Action，并返回新state
     reducer可以随着应用规模的变大，拆分成多个小的reducer，它们可以独立操作state的不同部分
 
-
-
-## 安装redux， react-redux
+## 1.安装redux， react-redux
 
 Redux 默认并不包含 React 绑定库，需要单独安装。
 ```
 npm i redux react-redux -S
 ```
 
-## 1. 
+## 2.引入`createStore`，创建单一数据源store
+
+`createStore`函数接受一个参数reducer，reducer作为纯函数使用，接受状态和action，返回新状态
+
+index.js
+```javascript
+import { createStore } from 'redux'
+import rootReducer from './reducer/index'
+
+const store = createStore(rootReducer)
+```
+
+## 3.创建`reducer`
+这里使用`combineReducers`，`combineReducers`可以把多个reducer合并后输出一个reducer，当应用日益增长时，处理状态的reducer文件就会越来越大，所以才会有分离reducer函数，`combineReducers`来自于`redux`
+
+reducer/index.js
+```javascript
+import { combineReducers } from 'redux'
+
+export default combineReducers({
+    todos,
+    visibleFilter
+})
+```
 
 
 
